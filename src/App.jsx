@@ -1,4 +1,6 @@
 import { Title } from './Title';
+import CreateSection from './CreateSection';
+import CreateInput from './CreateInput'
 import './App.css'
 
 function App() {
@@ -7,11 +9,10 @@ function App() {
     <div className='main'>
       <Title />
 
-      {/* <CreateSection>
+      <CreateSection>
         <CreateInput />
-        <Searcher />
       </CreateSection>
-
+{/* 
       <StartButton />
 
       <Credits /> */}

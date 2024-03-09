@@ -1,0 +1,9 @@
+.title-wrapper {
+    position: absolute;
+    top: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+}
