@@ -6,13 +6,14 @@ import { AppContext } from '../App';
 function Modal(props) {
 
     const [openModal] = useContext(AppContext);
+    
 
     if (openModal == true) {
         return (
             <div className='modal'>
-                <div className="modal-container">
+                <form className="modal-container">
                     {props.children}
-                </div>
+                </form>
             </div>
         )
     }
