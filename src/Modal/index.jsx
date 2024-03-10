@@ -11,9 +11,9 @@ function Modal(props) {
     if (openModal == true) {
         return (
             <div className='modal'>
-                <form className="modal-container">
+                <div className="modal-container">
                     {props.children}
-                </form>
+                </div>
             </div>
         )
     }

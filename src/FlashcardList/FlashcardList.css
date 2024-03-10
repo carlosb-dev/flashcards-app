@@ -1,0 +1,25 @@
+.flashcard-list-cotainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.flashcard-list {
+    list-style: none;
+    padding-left: 10px;
+    width: 90%;
+    border: 1px solid black;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.flashcard-list h2 {
+    align-self: flex-start;
+}
+
+.flashcard-list li {
+    padding: 5px;
+}
