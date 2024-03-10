@@ -1,0 +1,47 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    row-gap: 20px;
+}
+
+.form-container input {
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid black;
+    transition: 0.3s;
+}
+
+.form-container input:focus {
+    scale: 105%;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.add-button {
+    --height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(113, 204, 113);
+    width: 100%;
+    padding: 5px;
+    color: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    scale: 110%;
+    
+}
+
+.add-button:active {
+    background-color: rgb(74, 155, 74);
+    transition: 0s;
+    scale: 100%;
+}

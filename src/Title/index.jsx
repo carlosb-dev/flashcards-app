@@ -1,12 +1,10 @@
 import "./Title.css"
 
-function Title() {
+export default function Title() {
   return (
     <div className="title-wrapper">
         <h1>Start Learning!</h1>
-        <p>Add a new flashcard 👇</p>
+        <p>User-friendly Flashcard App</p>
     </div>
   )
 }
-
-export {Title};
