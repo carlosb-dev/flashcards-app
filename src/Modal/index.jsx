@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import './Modal.css';
 import { useContext } from 'react';
 import { AppContext } from '../App';
+import './Modal.css';
 
 function Modal(props) {
 
-    const [openModal] = useContext(AppContext);
+    const {openModal} = useContext(AppContext);
     
 
     if (openModal == true) {

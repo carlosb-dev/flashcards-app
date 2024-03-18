@@ -4,7 +4,7 @@ import './AddFlashcardBtn.css'
 
 function AddFlashcardBtn() {
 
-  const [openModal, setOpenModal] = useContext(AppContext);
+  const {openModal, setOpenModal} = useContext(AppContext);
   
     return (
       <button className='modal-btn' id="button" onClick={() => {setOpenModal(!openModal)}}>

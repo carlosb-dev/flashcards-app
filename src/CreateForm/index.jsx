@@ -1,36 +1,47 @@
 import { useContext, useState } from 'react';
+import { AppContext } from '../App.jsx';
 import './CreateForm.css';
-import { AppContext } from '../App';
+
+  let nextId = 0
 
 export default function CreateForm() {
 
-  const [openModal, setOpenModal] = useContext(AppContext);
-  const [newQuestionValue, setNewQuestionValue] = useState('');
-  const [newAnswerValue, setNewAnswerValue] = useState('');
+  const {flashcards, setFlashcards} = useContext(AppContext);
+  const [questionValue, setQuestionValue] = useState('');
+  const [answerValue, setAnswerValue] = useState('');
 
-  const addFlashcard = () => {
-    setOpenModal(!openModal);
-  }
+  console.log(flashcards)
 
-  const onSubmit = (e) => {
+  const updateFlashcards = (e) => {
     e.preventDefault();
-    console.log("Question: ", newQuestionValue, ", Answer: ", newAnswerValue);
-  }
 
-  const onChangeQ = (e) => {
-    setNewQuestionValue(e.target.value)
-  }
+    if (questionValue && answerValue) {
+      setFlashcards([
+        ...flashcards,
+        {id: nextId++, question: questionValue, answer: answerValue}
+      ]);
 
-  const onChangeA = (e) => {
-    setNewAnswerValue(e.target.value)
+    } else {
+      alert( "Please enter both a question and an answer.");
+    }
   }
 
   return (
-    <form className="form-container" onSubmit={onSubmit}>
-        <textarea type="text" className='form-textarea' placeholder="Add a Question" onChange={onChangeQ}></textarea>
-        <textarea type="text" className='form-textarea' placeholder="Add the Answer" onChange={onChangeA}></textarea>
+    <form className="form-container">
+        <textarea type="text" className='form-textarea' placeholder="Add a Question"
+          onChange={(e) => {setQuestionValue(e.target.value)}}
+        ></textarea>
+        <textarea type="text" className='form-textarea' placeholder="Add the Answer"
+          onChange={(e) => {setAnswerValue(e.target.value)}}
+        ></textarea>
 
-        <button type='submit' className="add-button" onClick={() => {addFlashcard}}>Add Question</button>
+        <button
+          type='submit'
+          className="add-button"
+          onClick={updateFlashcards}
+        >
+          + Add Question
+        </button>
     </form>
   )
 }

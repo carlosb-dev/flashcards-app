@@ -1,25 +1,63 @@
 .flashcard-list-cotainer {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
-    width: 100%;
-    border: 1px solid black;
+    width: 80%;
+    row-gap: 10px;
 }
 
 .flashcard-list {
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding-left: 10px;
-    width: 90%;
-    border: 1px solid black;
+    width: 100%;
+    border-top: 1px solid rgb(255, 187, 0);
+    border-bottom: 1px solid rgb(255, 187, 0);
     max-height: 50vh;
+    overflow-x: hidden;
     overflow-y: scroll;
+    padding: 0 10px 0 10px;
 }
 
-.flashcard-list h2 {
-    align-self: flex-start;
+.flashcard {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: row;
+    grid-template-columns: 90% 0.2fr;
+    grid-template-rows: 1fr;
+    border-bottom: 1px solid rgb(255, 187, 0);
+    padding: 5px 0 5px 0;
 }
 
-.flashcard-list li {
-    padding: 5px;
+.flashcard span {
+    scale: 120%;
+}
+
+.flashcard p {
+    overflow-wrap: break-word;
+}
+
+.answer {
+    display: none;
+}
+
+.flashcard:last-child {
+    border-bottom: none;
+}
+
+.no-flashcards {
+    color:gray;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.expanded {
+    transform: rotate(180deg);
+}
+
+.a-expanded {
+    display: block;
 }

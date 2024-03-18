@@ -6,19 +6,21 @@ import AddFlashcardBtn from './AddFlashcardBtn';
 import FlashcardList from './FlashcardList';
 import './App.css'
 
-export const AppContext = createContext();
+const AppContext = createContext();
 
 function App() {
 
   const [openModal, setOpenModal] = useState(false);
   const [flashcards, setFlashcards] = useState([]);
 
+
   return (
     <AppContext.Provider
-      value = {[
+      value = {{
         openModal,
-        setOpenModal
-      ]}
+        setOpenModal,
+        flashcards,
+        setFlashcards,}}
     >
       <div className='main'>
         <Modal>
@@ -31,10 +33,9 @@ function App() {
 
         <AddFlashcardBtn />
 
-        {/* <Credits /> */}
       </div>
     </AppContext.Provider>
   )
 }
 
-export default App;
+export {App, AppContext};
