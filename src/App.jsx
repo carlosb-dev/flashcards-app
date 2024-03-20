@@ -4,15 +4,18 @@ import Modal from './Modal';
 import CreateForm from './CreateForm';
 import AddFlashcardBtn from './AddFlashcardBtn';
 import FlashcardList from './FlashcardList';
+import useLocalStorage from './useLocalStorage';
 import './App.css'
 
 const AppContext = createContext();
 
 function App() {
 
-  const [openModal, setOpenModal] = useState(false);
-  const [flashcards, setFlashcards] = useState([]);
+  const items = useLocalStorage('flashcard_list', []).item;
+  console.log(items)
 
+  const [openModal, setOpenModal] = useState(false);
+  const [flashcards, setFlashcards] = useState(items);
 
   return (
     <AppContext.Provider
@@ -20,7 +23,8 @@ function App() {
         openModal,
         setOpenModal,
         flashcards,
-        setFlashcards,}}
+        setFlashcards
+      }}
     >
       <div className='main'>
         <Modal>

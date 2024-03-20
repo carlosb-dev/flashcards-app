@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../App.jsx';
+import { AppContext } from '../App.jsx'; 
 import './CreateForm.css';
 
   let nextId = 0
@@ -10,15 +10,13 @@ export default function CreateForm() {
   const [questionValue, setQuestionValue] = useState('');
   const [answerValue, setAnswerValue] = useState('');
 
-  console.log(flashcards)
-
   const updateFlashcards = (e) => {
     e.preventDefault();
 
     if (questionValue && answerValue) {
       setFlashcards([
         ...flashcards,
-        {id: nextId++, question: questionValue, answer: answerValue}
+        {id: nextId++, question: questionValue, answer: answerValue, opened: false}
       ]);
 
     } else {

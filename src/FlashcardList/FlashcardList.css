@@ -40,7 +40,10 @@
 }
 
 .answer {
+    margin-top: 10px;
     display: none;
+    color: rgb(114, 114, 114);
+    font-style: italic;
 }
 
 .flashcard:last-child {
