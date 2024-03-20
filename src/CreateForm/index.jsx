@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react';
-import { AppContext } from '../App.jsx'; 
+import { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../App.jsx';
 import './CreateForm.css';
 
   let nextId = 0
 
 export default function CreateForm() {
 
-  const {flashcards, setFlashcards} = useContext(AppContext);
+  const {flashcards, setFlashcards, addFlashcard} = useContext(AppContext);
   const [questionValue, setQuestionValue] = useState('');
   const [answerValue, setAnswerValue] = useState('');
 
@@ -23,6 +23,10 @@ export default function CreateForm() {
       alert( "Please enter both a question and an answer.");
     }
   }
+
+  useEffect(()=>{
+    addFlashcard(flashcards);
+  }, [addFlashcard, flashcards])
 
   return (
     <form className="form-container">

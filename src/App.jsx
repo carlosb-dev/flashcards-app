@@ -1,4 +1,4 @@
-import {createContext, useState} from 'react';
+import {createContext, useEffect, useState} from 'react';
 import Title from './Title';
 import Modal from './Modal';
 import CreateForm from './CreateForm';
@@ -8,14 +8,24 @@ import useLocalStorage from './useLocalStorage';
 import './App.css'
 
 const AppContext = createContext();
+const flashcardLS = 'flashcard_list';
 
 function App() {
 
-  const items = useLocalStorage('flashcard_list', []).item;
-  console.log(items)
+  const items = useLocalStorage(flashcardLS, []).item;
 
   const [openModal, setOpenModal] = useState(false);
-  const [flashcards, setFlashcards] = useState(items);
+  
+  const [flashcards, setFlashcards] = useState([]);
+  
+  useEffect(() => {
+    setFlashcards(items);
+  },[items])
+
+  const addFlashcard = (flashcards) => {
+    const item = JSON.stringify(flashcards);
+    localStorage.setItem(flashcardLS, item);
+  }
 
   return (
     <AppContext.Provider
@@ -23,7 +33,8 @@ function App() {
         openModal,
         setOpenModal,
         flashcards,
-        setFlashcards
+        setFlashcards,
+        addFlashcard
       }}
     >
       <div className='main'>
