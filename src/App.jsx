@@ -73,7 +73,9 @@ function App() {
                 onClick={()=> {deleteFlashcard(flashcard.id)}}
               >remove</span>
 
-              <p className={`answer ${(flashcard.opened) ? 'a-expanded' : ''}`}>{flashcard.answer}</p>
+              <div className='answer-container'>
+                <p className={`answer ${(flashcard.opened) ? 'a-expanded' : ''}`}>{flashcard.answer}</p>
+              </div>
             </li>
            ))}
         </FlashcardList>
