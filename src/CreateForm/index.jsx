@@ -2,13 +2,15 @@ import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../App.jsx';
 import './CreateForm.css';
 
-  let nextId = 0
+  let nextId = JSON.parse(localStorage.getItem( "nextId" )) || 0;
 
 export default function CreateForm() {
 
   const {flashcards, setFlashcards, addFlashcard} = useContext(AppContext);
   const [questionValue, setQuestionValue] = useState('');
   const [answerValue, setAnswerValue] = useState('');
+  localStorage.setItem('nextId', JSON.stringify(nextId));
+  
 
   const updateFlashcards = (e) => {
     e.preventDefault();
@@ -16,8 +18,10 @@ export default function CreateForm() {
     if (questionValue && answerValue) {
       setFlashcards([
         ...flashcards,
-        {id: nextId++, question: questionValue, answer: answerValue, opened: false}
+        {id: nextId, question: questionValue, answer: answerValue, opened: false}
       ]);
+
+      nextId++;
 
     } else {
       alert( "Please enter both a question and an answer.");

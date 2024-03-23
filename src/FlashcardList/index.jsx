@@ -1,18 +1,12 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import './FlashcardList.css'
 import { AppContext } from '../App'
 
-let nextId = 0
 
-function FlashcardList() {
+
+function FlashcardList(props) {
 
   const {flashcards} = useContext(AppContext);
-  const [expanded, setExpanded] = useState(false);
-
-  const openFlashcard = (item) => {
-    setExpanded(!expanded)
-    item.opened = expanded
-  }
 
   if (flashcards.length > 0) {
     return (
@@ -20,30 +14,14 @@ function FlashcardList() {
         <h2>Flashcard List</h2>
 
         <ul className="flashcard-list">
-
-          {flashcards.map(flashcard => (
-            <li className='flashcard' key={nextId++}>
-              
-              <p className='question'
-                onClick={()=> {openFlashcard(flashcard)}} 
-              >
-              {flashcard.question}
-              </p>
-
-              <span
-                className={`material-symbols-outlined ${(flashcard.opened) ? 'expanded' : ''}`}
-                onClick={()=> {openFlashcard(flashcard)}}
-              >expand_more</span>
-
-              <p className={`answer ${(flashcard.opened) ? 'a-expanded' : ''}`}>{flashcard.answer}</p>
-            </li>
-          ))}
-
+          {/* eslint-disable react/prop-types */}
+          {props.children}
         </ul>
       </div>
     )
 
   } else {
+
     return (
       <div className='flashcard-list-cotainer'>
       <h2>Flashcard List</h2>
@@ -57,4 +35,4 @@ function FlashcardList() {
 
 }
 
-export default FlashcardList
+export default FlashcardList;
