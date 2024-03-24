@@ -5,4 +5,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #201E1F;
+    color: #fcfff7;
 }
