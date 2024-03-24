@@ -53,8 +53,7 @@ function App() {
         <FlashcardList />
 
         <Link to='/practice'>Start Practice</Link>
-        <a href="/practice">Start Practice</a>
-
+        
         <AddFlashcardBtn />
 
       </div>
