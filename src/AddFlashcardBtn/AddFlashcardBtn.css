@@ -11,10 +11,10 @@
     transform-origin: left bottom;
     z-index: 1;
 
-    background-color: #50B2C0;
+    background-color: var(--yellow);
     border: none;
     border-radius: 50%;
-    color: #ffffff;
+    color: var(--white);
 }
 
 span {

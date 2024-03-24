@@ -1,3 +1,11 @@
+
+:root {
+    --black: #201E1F;
+    --white: #fcfff7;
+    --blue: #50B2C0;
+    --yellow: #F0A202;
+}
+
 .main {
     width: 100%;
     height: 100vh;
@@ -5,6 +13,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #201E1F;
-    color: #fcfff7;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.link {
+    margin: 10px;
+    background-color: var(--blue);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 0.2em;
+    color: var(--white);
 }
