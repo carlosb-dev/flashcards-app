@@ -1,0 +1,37 @@
+.question-wrapper {
+    width: 80%;
+    height: fit-content;
+    padding: 10%;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #201f1f;
+    transition: 0.3s;
+}
+
+.ongame-question {
+    font-size: x-large;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.ongame-answer {
+    font-size: medium;
+    display: none;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+.show {
+    display: block;
+    transform: rotateY(180deg);
+}
+
+.hide {
+    display: none;
+}

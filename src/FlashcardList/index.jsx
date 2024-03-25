@@ -21,7 +21,7 @@ function FlashcardList() {
 
   if (flashcards.length > 0) {
     return (
-      <div className='flashcard-list-cotainer'>
+      <div className='flashcard-list-container'>
         <h2>Flashcard List</h2>
 
         <ul className="flashcard-list">

@@ -32,8 +32,8 @@ localStorage.setItem(flashcardLS, JSON.stringify(
     },
     {
       "id": 3,
-      "question": "¿Cómo se llama la capital de Mongolia?",
-      "answer": "La capital de Mongolia es Ulan Bator.",
+      "question": "¿Cómo se llama la capital de Japón?",
+      "answer": "La capital de Japón es Tokyo.",
       "opened": false
     },
     {
@@ -70,12 +70,6 @@ localStorage.setItem(flashcardLS, JSON.stringify(
       "id": 9,
       "question": "¿De qué colores es la bandera de México?",
       "answer": "La bandera de México está compuesta por tres colores: verde, blanco y rojo.",
-      "opened": false
-    },
-    {
-      "id": 10,
-      "question": "¿Cuántos huesos tiene el cuerpo humano?",
-      "answer": "Un adulto tiene 206 huesos, mientras que los recién nacidos tienen alrededor de 300 huesos.",
       "opened": false
     }
   ]

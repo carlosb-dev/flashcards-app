@@ -1,16 +1,16 @@
-.question-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 0 10% 0 10%;
+
+.practice-link {
+    position: absolute;
+    background-color: var(--blue);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 0.2em;
+    color: var(--white);
+    margin: 0px auto;
+    bottom: 10px;
+    width: fit-content;
 }
 
-.ongame-question {
-    font-size: x-large;
-    font-weight: bold;
-    color: var(--blue);
-}
-
-.ongame-answer {
-    font-size: medium;
+span {
+    scale: 120%;
 }

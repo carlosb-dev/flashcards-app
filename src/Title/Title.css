@@ -1,9 +1,5 @@
 .title-wrapper {
-    top: 30vh;
-    display: flex;
-    align-items: center;
     justify-content: start;
-    flex-direction: column;
     margin-bottom: 30px;
 }
 
@@ -12,6 +8,7 @@
     font-size: 14px;
 }
 
-h1 {
+.title-wrapper h1 {
+    font-size: 35px;
     color: #C50374;
 }
