@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AppContext } from '../App'
 import './FlashcardList.css'
 
@@ -6,7 +6,8 @@ import './FlashcardList.css'
 
 function FlashcardList() {
 
-  const {flashcards, setFlashcards, expanded, setExpanded, flashcardLS} = useContext(AppContext);
+  const {flashcards, setFlashcards, flashcardLS} = useContext(AppContext);
+  const [expanded, setExpanded] = useState(false);
 
   const deleteFlashcard = (item) =>{
     const newFlashcards = flashcards.filter(a =>a.id !== item)
@@ -18,22 +19,28 @@ function FlashcardList() {
     setExpanded(!expanded);
     item.opened = expanded;
   }
-
+  
   if (flashcards.length > 0) {
     return (
       <div className='flashcard-list-container'>
-        <h2>Flashcard List</h2>
+        <div className='flashcard-list-title'>
+          <h2>Flashcard List</h2>
+          <p>({flashcards.length} cards)</p>
+        </div>
 
         <ul className="flashcard-list">
           {flashcards.map(flashcard => (
-            <li className='flashcard' key={flashcard.id}>
+            <li className={`flashcard ${(flashcard.opened) ? 'f-expanded' : ''}`} key={flashcard.id}>
               
               <span
                 className={`material-symbols-outlined ${(flashcard.opened) ? 'expanded' : ''}`}
                 onClick={()=> {openFlashcard(flashcard)}}
-              >expand_more</span>
+              >
+                expand_more
+              </span>
               
-              <p className='question'
+              <p 
+                className='question'
                 onClick={()=> {openFlashcard(flashcard)}} 
               >
               {flashcard.question}
@@ -43,11 +50,14 @@ function FlashcardList() {
               <span
                 className={'material-symbols-outlined'}
                 onClick={()=> {deleteFlashcard(flashcard.id)}}
-              >remove</span>
+              >
+                remove
+                </span>
 
-              <div className='answer-container'>
-                <p className={`answer ${(flashcard.opened) ? 'a-expanded' : ''}`}>{flashcard.answer}</p>
-              </div>
+                <p className={`answer ${(flashcard.opened) ? 'a-expanded' : ''}`}>
+                  {flashcard.answer}
+                </p>
+
             </li>
            ))}
         </ul>

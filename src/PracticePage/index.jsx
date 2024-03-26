@@ -15,16 +15,16 @@ function PracticePage() {
 
   const nextFlashcard = () => {
     setCounter(counter+1);
-    setQuestion(flashcards[counter].question);
-    setAnswer(flashcards[counter].answer);
-    console.log(counter);
+    setQuestion(flashcards[counter +1].question);
+    setAnswer(flashcards[counter +1].answer);
+    console.log(counter +1);
   }
 
   const lastFlashcard = () => {
     setCounter(counter-1);
-    setQuestion(flashcards[counter].question);
-    setAnswer(flashcards[counter].answer);
-    console.log(counter);
+    setQuestion(flashcards[counter -1].question);
+    setAnswer(flashcards[counter -1].answer);
+    console.log(counter -1);
   }
 
   if (counter === 0) {

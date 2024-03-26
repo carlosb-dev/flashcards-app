@@ -22,6 +22,7 @@
     background-color: var(--blue);
     padding: 10px;
     text-decoration: none;
+    border: none;
     border-radius: 0.2em;
     color: var(--white);
 }

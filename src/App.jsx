@@ -80,7 +80,6 @@ function App() {
   const [nextId, setNextId] = useState(JSON.parse(localStorage.getItem( "nextId" )) || 0);
   const [openModal, setOpenModal] = useState(false);
   const [flashcards, setFlashcards] = useState(JSON.parse(localStorage.getItem( flashcardLS )) || []);
-  const [expanded, setExpanded] = useState(false);
   const [renderState, setRenderState] = useState('main');
 
   const addFlashcard = (flashcards) => {
@@ -93,8 +92,6 @@ function App() {
       value = {{
         renderState,
         setRenderState,
-        expanded,
-        setExpanded,
         flashcardLS,
         openModal,
         setOpenModal,
@@ -116,7 +113,9 @@ function App() {
 
         <FlashcardList />
 
-        <Link to='/practice' className="link">Start Practice</Link>
+        {(flashcards.length > 0)
+          ? <Link to='/practice' className="link">Start Practice</Link>
+          : <button onClick={()=>{alert("Add a flashcard first!")}} className="link">Start Practice</button>}
         
         <AddFlashcardBtn />
 
