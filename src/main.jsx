@@ -7,7 +7,7 @@ import './index.css'
 
 const router = createBrowserRouter([
   {
-  path: '/',
+  path: '/flashcards-app',
   element: <App/>,
   errorElement:
   <div className='error-container'>
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/practice',
+    path: '/flashcards-app/practice',
     element: <PracticePage/>,
   }
 ]);
