@@ -22,7 +22,7 @@ const router = createHashRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <HashRouter>
+  <HashRouter basename='https://carlosb-dev.github.io/flashcards-app/'>
     <RouterProvider router={router}/>
   </HashRouter>
 )
